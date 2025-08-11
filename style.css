@@ -1,0 +1,228 @@
+:root {
+  --bg: #333;
+  --card: #444;
+  --accent: #ffd700;
+  --primary: #007bff;
+  --muted: #ccc;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #fff;
+}
+.hidden {
+  display: none !important;
+}
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a3c6e, #007bff);
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  border-right: 2px solid var(--accent);
+  overflow-y: auto;
+}
+.sidebar h2 {
+  color: var(--accent);
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.sidebar nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 12px 0;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sidebar nav a:hover {
+  background: var(--accent);
+  color: #123;
+}
+.main-content {
+  margin-left: 0;
+  padding: 20px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+.main-content.logged-in {
+  margin-left: 240px;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #444, #555);
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.small {
+  max-width: 420px;
+}
+.login-view .container {
+  margin-top: 60px;
+  text-align: center;
+}
+input, select, button, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #555;
+  color: #fff;
+  margin: 8px 0;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+label {
+  display: block;
+  margin: 8px 0;
+}
+.btn {
+  background: linear-gradient(90deg, #28a745, #218838);
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.btn.small {
+  padding: 6px 10px;
+}
+.cards {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.12);
+}
+.view {
+  display: none !important;
+}
+.view.active {
+  display: block !important;
+}
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+#studentsList .student-row {
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.smallcode {
+  background: #222;
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--accent);
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: var(--card);
+}
+th, td {
+  padding: 8px;
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  color: #fff;
+  text-align: left;
+}
+th {
+  background: linear-gradient(90deg, var(--primary), #005f73);
+}
+.badge-paid {
+  color: #0f0;
+  font-weight: 700;
+}
+.badge-unpaid {
+  color: #f55;
+  font-weight: 700;
+}
+.status-low {
+  background: #7a1;
+  padding: 6px;
+  border-radius: 4px;
+  color: #111;
+  display: inline-block;
+}
+.status-mid {
+  background: #f4a;
+  padding: 6px;
+  border-radius: 4px;
+  color: #111;
+  display: inline-block;
+}
+.status-high {
+  background: #8f8;
+  padding: 6px;
+  border-radius: 4px;
+  color: #111;
+  display: inline-block;
+}
+.visiting-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #222;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.08);
+}
+.visiting-card img {
+  width: 84px;
+  height: 84px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+.visiting-card .vc-text {
+  flex: 1;
+}
+.visiting-card h3 {
+  margin: 0;
+  color: var(--accent);
+}
+.visiting-card p {
+  margin: 2px 0;
+  color: #ddd;
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 12px;
+  }
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
